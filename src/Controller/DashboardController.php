@@ -8,6 +8,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use App\Entity\Projets;
 use App\Repository\ProjetsRepository;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use App\Form\ProjetsType;
+
 
 class DashboardController extends AbstractController
 {
@@ -26,23 +31,40 @@ class DashboardController extends AbstractController
 
     /**
      * @Route("/dashboard/new", name="dashboard_new")
+     * @Route("/dashboard/{id}/edit", name="dashboard_edit")
      */
-    public function create(Request $request, ObjectManager $manager)
+    public function form(Projets $projet = null, Request $request, ObjectManager $manager)
     {
-        $projets = new Projets();
+        if(!$projet){
+            $projet = new Projets();
+        }
 
-        $form = $this->createFormBuilder($projets)
-                     ->add('title')
-                     ->add('description')
-                     ->add('image')
-                     ->add('git')
-                     ->add('url')
-                     ->getForm();
+        // $form = $this->createFormBuilder($projet)
+        //              ->add('title')
+        //              ->add('description')
+        //              ->add('image')
+        //              ->add('git')
+        //              ->add('url')
+        //              ->getForm();
 
+        $form = $this->createForm(ProjetsType::class, $projet);
+
+                     $form->handleRequest($request);
+
+                     if($form->isSubmitted() && $form->isValid()){
+                         if(!$projet->getId()){
+                             $projet->setCreatedAt(new \DateTime());
+                         }
+
+                         $manager->persist($projet);
+                         $manager->flush();
+
+                         return $this->redirectToRoute('projets_show', ['id' => $projet->getId()]);
+                     }
 
         return $this->render('dashboard/create.html.twig',[
-                'formProjet' => $form->createView()
-
+                'formProjet' => $form->createView(),
+                'editMode' => $projet->getId() !== null
             ]);
     }
 
