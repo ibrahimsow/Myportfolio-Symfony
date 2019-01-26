@@ -24,6 +24,17 @@ class DashboardController extends AbstractController
     {
         $projets = $repo->findAll();
         return $this->render('dashboard/index.html.twig', [
+            'controller_name' => 'DashboardController'
+        ]);
+    }
+
+    /**
+     * @Route("/dashboard/projets", name="dashboard_all_projets")
+     */
+    public function all(ProjetsRepository $repo)
+    {
+        $projets = $repo->findAll();
+        return $this->render('dashboard/tous_les_projets.html.twig', [
             'controller_name' => 'DashboardController',
             'projets'=> $projets
         ]);
@@ -59,7 +70,7 @@ class DashboardController extends AbstractController
                          $manager->persist($projet);
                          $manager->flush();
 
-                         return $this->redirectToRoute('projets_show', ['id' => $projet->getId()]);
+                         return $this->redirectToRoute('dashboard_projets_show', ['id' => $projet->getId()]);
                      }
 
         return $this->render('dashboard/create.html.twig',[
@@ -71,7 +82,7 @@ class DashboardController extends AbstractController
     
 
     /**
-     * @Route("/dashboard/projet/{id}", name="projets_show")
+     * @Route("/dashboard/projet/{id}", name="dashboard_projets_show")
      */
     public function show(Projets $projet){
         return $this->render('dashboard/projet.html.twig', [

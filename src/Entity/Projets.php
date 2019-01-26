@@ -19,7 +19,7 @@ class Projets
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\Length(min=2, max=255, minmessage="Le titre est trop court")
+     * @Assert\Length(min=2, max=255, minMessage="Le titre est trop court")
      */
     private $title;
 
@@ -31,7 +31,7 @@ class Projets
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\Url()
+     * @Assert\Length(min=7)
      */
     private $image;
 

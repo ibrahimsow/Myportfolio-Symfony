@@ -120,3 +120,5 @@ $('.img-parallax').each(function(){
       }
     });
   });
+
+  // dashboard

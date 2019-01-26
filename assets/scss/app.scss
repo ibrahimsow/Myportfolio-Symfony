@@ -1,5 +1,27 @@
+@import 'dash';
 body{
     margin: 0;
+    .fa-chevron-up{
+        position: fixed;
+        top: 85%;
+        right: 3%; 
+        z-index: 1;
+        font-size: 2rem;
+        color: #101010;
+        @media (max-width: 575px) {
+            
+            display: none;
+         }
+         @media (min-width: 576px) and (max-width: 767px) {
+             display: none;
+        }
+        @media (min-width: 768px) and (max-width: 991px) {
+            display: none; 
+           }
+           @media (min-width: 992px) and (max-width: 1199px) {
+               display: none;
+        }
+    }
 
     header{
         // height: 100vh;
@@ -29,27 +51,7 @@ body{
             width: 20vw;
             color:#ffffff9c;
         }
-        .fa-chevron-up{
-            position: fixed;
-            top: 85%;
-            right: 3%; 
-            z-index: 1;
-            font-size: 2rem;
-            color: #101010;
-            @media (max-width: 575px) {
-                
-                display: none;
-             }
-             @media (min-width: 576px) and (max-width: 767px) {
-                 display: none;
-            }
-            @media (min-width: 768px) and (max-width: 991px) {
-                display: none; 
-               }
-               @media (min-width: 992px) and (max-width: 1199px) {
-                   display: none;
-            }
-        }
+     
         .lds-roller {
             display: inline-block;
             position:  absolute;
