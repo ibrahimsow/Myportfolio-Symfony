@@ -34,7 +34,7 @@
   <a href="#top-of-dash"><i class="fas fa-chevron-up"></i></a> 
 
     <section class="mt-5 d-flex flex-column justify-content-center align-items-center">
-      <button type="button" class="btn btn-success"><a href="{{ path('dashboard_new') }}">Ajouter un projet</a></button> 
+      <button type="button" class="btn ajout-projet btn-success"><a href="{{ path('dashboard_new') }}">Ajouter un projet</a></button> 
     {% for projet in projets %}
         <div class="container expo-projet row d-flex justify-content-center align-items-center " data-aos="fade-up" data-aos-duration="1500"> 
             <a href="{{ projet.url }}" target="blank">
@@ -46,8 +46,15 @@
                     <p>{{ projet.createdAt | date('d/m/Y') }}</p>
                     {{ projet.description | raw }}
                     <a data-aos="fade-up" href="{{ projet.git }}" target="blank" rel="noopener noreferrer" class="github text-center d-flex flex-column"><i class="fab fa-gitlab"></i> <span class="text-git">Voir le projet sur gitLab</span></a>
-                    <a href="{{ path('dashboard_projets_show', {'id': projet.id}) }}">Plus de details</a>
-                    <a href="{{ path('dashboard_edit', {'id': projet.id}, 'edit') }}">Modifier</a>
+                    <button type="button" class="btn btn-primary"> <a href="{{ path('dashboard_projets_show', {'id': projet.id}) }}">Plus de details</a></button>
+                    <button type="button" class="btn btn-secondary"> <a href="{{ path('dashboard_edit', {'id': projet.id}, 'edit') }}">Modifier</a></button>
+                    <button type="button" class="btn btn-danger"> <a href="{{ path('dashboard_projets_delete', {'id': projet.id}) }}">Supprimer</a></button>
+                  
+                    {# <form method="post" action="{{ path('dashboard_projets_delete', {'id': projet.id}) }}" onsubmit="return confirm('C'est sûr ?');">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ projet.id) }}">
+                    <button class="btn btn-primary">Supprimer</button>
+                    </form> #}
 
                 </div>
             </div>

@@ -89,6 +89,21 @@ class DashboardController extends AbstractController
             'projet'=> $projet
         ]);
     }
+    
+     /**
+     * @Route("/dashboard/{id}/delete", name="dashboard_projets_delete")
+     */
+        public function delete(Projets $projet, Request $request){
+
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($projet);
+        $entityManager->flush();
+        $this->addFlash('succes', 'Projet supprimé avec succès !');
+
+        
+        return $this->redirectToRoute('dashboard_all_projets');
+    }
 
    
 }
