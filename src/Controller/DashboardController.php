@@ -99,7 +99,6 @@ class DashboardController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->remove($projet);
         $entityManager->flush();
-        $this->addFlash('succes', 'Projet supprimé avec succès !');
 
         
         return $this->redirectToRoute('dashboard_all_projets');

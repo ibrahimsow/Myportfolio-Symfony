@@ -3,7 +3,7 @@
 {% block title %}Hello DashboardController!{% endblock %}
 
 {% block body %}
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="top-of-dash">
+  <nav class="navbar  fixed-top navbar-expand-lg navbar-dark bg-dark" id="top-of-dash">
         <a class="navbar-brand" href="{{ path('home') }}">Portfolio</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -33,8 +33,9 @@
     </nav>
 
   <a href="#top-of-dash"><i class="fas fa-chevron-up"></i></a> 
-    <section class="mt-5 d-flex flex-column justify-content-center align-items-center">
-    <h1>Bienvenu dans le Dashboard ! Gerez le contenu de votre site facilement </h1>
+    <section class="accueil-dash d-flex flex-column justify-content-center align-items-center">
+        <h1>Bienvenue dans le Dashboard !</h1>
+        <button type="button" class="btn btn-success"><a href="{{ path('dashboard_new') }}">Ajouter un projet</a></button> 
     </section>
 
 {% endblock %}

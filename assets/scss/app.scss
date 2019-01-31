@@ -1,4 +1,6 @@
 @import 'dash';
+@import 'contact';
+
 body{
     margin: 0;
     .fa-chevron-up{
@@ -654,61 +656,7 @@ body{
                     opacity: 1;  
                 }
             }
-        }
-        
-     
-        .phone{
-            background-color: #202529;
-            background: url(/build/static/picture-right.jpeg);
-            background-size: cover;
-            background-position: center;
-            position: absolute;
-            top: 50vh;
-            right: 5vw;
-            height: 50vh;
-            width: 40vw;
-            padding: 15px;
-            margin-left: 5vw;
-        }
-        .contact-title{
-            position: absolute;
-            top: 50vh;
-            left: 2vw;
-            height: 50vh;
-            width: 40vw;
-            padding: 15px;
-            margin-left: 5vw;
-                h1{
-                font-size: 5rem;
-                letter-spacing: 7px;
-                font-family: 'Montserrat', sans-serif;
-                font-weight: 800;
-                color: #101010;
-                line-height: 7rem;
-                color: white;
-                }
-            @media (max-width: 575px) { 
-                top: 40vh;
-                height: 30vh;
-                width: 100%;
-             }
-             @media (min-width: 576px) and (max-width: 767px) { 
-                top: 40vh;
-                height: 30vh;
-                width: 100%;
-            }
-            @media (min-width: 768px) and (max-width: 991px) { 
-                top: 40vh;
-                height: 30vh;
-                width: 100%;
-               }
-               @media (min-width: 992px) and (max-width: 1199px) { 
-                top: 40vh;
-                height: 30vh;
-                width: 100%;
-            }
-        }
-       
+        }       
     }
     .section-citation{
         // display: none !important;
