@@ -3,6 +3,7 @@
 
 body{
     margin: 0;
+    font-family: 'Roboto', sans-serif;
     .fa-chevron-up{
         position: fixed;
         top: 85%;
@@ -26,10 +27,10 @@ body{
     }
 
     header{
-        // height: 100vh;
-        // background-color: white; 
-        padding-bottom: 10vh;
-        // padding: 0 !important;
+        height: 100vh;
+        background: url(/build/static/bg-accueil.jpeg);
+        background-size: cover;
+        background-position: center;
         @media (max-width: 575px) {
         
          }
@@ -158,7 +159,6 @@ body{
             top: 3%;
             left: 6%;
             z-index: 1;
-            font-family: 'Montserrat', sans-serif;
             font-weight: 800;
             height: 160px;
             width: auto;
@@ -261,6 +261,22 @@ body{
                 margin: 10px 0px;
             }
         }
+        .menu-large{
+            margin-right: 8%;
+            .active{
+                color: #BD3030 !important;
+            }
+            .lien-menu-large{
+                text-decoration: none;
+                color: black;
+                font-weight: 700;
+                font-size: 1.2rem;
+                &:hover{
+                    text-decoration: none;
+                    color: #BD3030;
+                }
+            }
+        }
         .menu{
             // display: none;
             transition: 3s;
@@ -310,7 +326,6 @@ body{
                 padding: 10px;
                 display: block;
                 color: #818181;
-                font-family: "Dosis", sans-serif;
                 text-decoration: none;
                 transition: 0.3s;
                 &:hover{
@@ -344,7 +359,6 @@ body{
                 font-size: 3rem;
                 color: #818181;
                 text-decoration: none;
-                font-family: "Dosis", sans-serif;
                 transition: 0.3s;
                 @media (max-width: 575px) { 
                     font-size: 4.5rem;
@@ -361,8 +375,10 @@ body{
             }
         }
         .web-dev{
-            margin-top: 20vh;
+            margin-top: 25vh;
             margin-bottom: 3vh;
+            color: #4A4A4A;
+            margin-left: 8%;
             @media (max-width: 575px) { 
                  margin-top: 25vh;
             margin-bottom: 15vh;
@@ -380,7 +396,8 @@ body{
             margin-bottom: 15vh;
             }
             h2{
-                font-size: 2.3rem;
+                font-size: 4.3rem;
+                font-weight: 700;
                 @media (max-width: 575px) { 
                     font-size: 1.5rem;
                  }
@@ -395,7 +412,7 @@ body{
                 }
             }
             h3{
-                font-size: 1.2rem;
+                font-size: 1.85rem;
                 @media (max-width: 575px) { 
                     font-size: 1rem;
                  }
@@ -408,6 +425,12 @@ body{
                    @media (min-width: 992px) and (max-width: 1199px) { 
                     font-size: 1.5rem;
                 }
+            }
+            .btn-cv{
+                background-color: #30A1BD;
+                border-color: #30A1BD;
+                color: #fff;
+                margin-top: 3vh;
             }
         }
 
@@ -661,14 +684,12 @@ body{
     .section-citation{
         // display: none !important;
         // background-color: #ededed;
-        background-color: #4bcaff;
-        padding: 0 !important;
+        background-color: #30a1bd;
+        padding: 15vh !important;
         h1{
-            padding-top: 15vh;
-            padding-bottom: 10vh;
-            max-width: 80vw;
-            font-size: 5rem;
-            font-family: 'Dosis', sans-serif;
+            padding-bottom: 5vh;
+            max-width: 60vw;
+            font-size: 3rem;
             color: white;
             margin: 0;
             @media (max-width: 575px) {
@@ -689,7 +710,6 @@ body{
             }
         }
         h2{ 
-            padding-bottom: 15vh;
             max-width: 50vw;
             font-size: 1.5rem;
             color: white;
@@ -776,7 +796,6 @@ body{
             h1{
                 font-size: 3rem;
                 letter-spacing: 2px;
-                font-family: 'Montserrat', sans-serif;
                 font-weight: 800;
                 margin-bottom: 3vh;
                 @media (max-width: 575px) {
@@ -813,14 +832,16 @@ body{
             }
         }
     }
+    .section-language{
+        height: 100vh;
+    }
     .section-footer{
-        background-color: #343a40;
-        background: linear-gradient(rgba(0, 156, 181, 0.18), rgba(0, 0, 0, 0.82)), url(/build/static/doubleexplosure.jpg);
-        background-size: cover;
-        background-position: center;
+        background-color: #353535;
+        // background: linear-gradient(rgba(0, 156, 181, 0.18), rgba(0, 0, 0, 0.82)), url(/build/static/doubleexplosure.jpg);
+        // background-size: cover;
+        // background-position: center;
         color: white;
-        font-family: 'Montserrat', sans-serif;
-        padding: 0 !important;
+        padding: 100px !important;
         a{
             text-decoration: none;
             color: white;
@@ -828,7 +849,6 @@ body{
         h4{
             font-size: 3rem;
             letter-spacing: 4px;
-            font-family: 'Montserrat', sans-serif;
             margin-top: 15vh;
             margin-bottom: 5vh;
             @media (max-width: 575px) {
@@ -857,8 +877,7 @@ body{
                 }
         }
         .icone{
-            margin-top: 5vh;
-            margin-bottom: 15vh;
+            margin: 10px;
             i{
                 font-size: 3rem;
                 margin: 0px 20px;
@@ -896,6 +915,14 @@ body{
                 }
         }
     }
+    .copyright{
+        background-color: #202020;
+        color: #646464;
+        p{
+            padding: 25px;
+            margin: 0 !important;
+        }
+    }
     // page prjets
     .titre-page-projets{
         height: 100vh;
@@ -919,7 +946,6 @@ body{
         }
         h2{
             font-size: 5rem;
-            font-family: 'Montserrat', sans-serif;
             font-weight: 800;
             letter-spacing: 10px;
             @media (max-width: 575px) { 
