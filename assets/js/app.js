@@ -1,6 +1,26 @@
 // transition sur la redirection de mon liens d'ancrage
 console.log("hey");
 AOS.init();
+// $('.owl-carousel').owlCarousel({
+//     loop:true,
+//     margin:10,
+//     nav:true,
+//     autoplay:true,
+//     autoplayTimeout:5000,
+//     autoplaySpeed: 3000,
+//     autoplayHoverPause:true,
+//     responsive:{
+//         0:{
+//             items:1
+//         },
+//         600:{
+//             items:3
+//         },
+//         1000:{
+//             items:3
+//         }
+//     }
+// })
 
 (function() {
     var speed = 600;
