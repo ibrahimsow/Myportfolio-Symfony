@@ -31,7 +31,7 @@
 	</g>
 </g>
 </svg>
-        <div class="menu">
+        {# <div class="menu">
             <div class="container-fluid showmenu ">
             <a id="button" href="" class="closeBtn">&times;</a>
             <ul class="nav d-flex flex-column">
@@ -48,6 +48,17 @@
                     <a class="nav-link accueil" href="{{path('contact')}}">CONTACT</a>
                 </li>
             </ul>
+            </div>
+        </div> #}
+         <div class="container-fluid mt-2 pt-5">
+            <div class="menu-large  d-flex justify-content-end align-items-end">
+                <a class="lien-menu-large pr-5" href="{{path('home')}}">Accueil</a>
+                <span>|</span>    
+                <a class="lien-menu-large active pr-5 pl-5" href="{{path('projets')}}">Projets</a>
+                <span>|</span>
+                <a class="lien-menu-large pr-5 pl-5" href="{{path('home')}}#apropos">À Propos</a>
+                <span>|</span>
+                <a class="lien-menu-large pl-5" href="{{path('contact')}}">Contact</a>
             </div>
         </div>
         <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
