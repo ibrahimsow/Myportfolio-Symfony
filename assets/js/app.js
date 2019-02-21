@@ -105,7 +105,7 @@ const closemenucontact = document.querySelector(".contact");
 
  // sticky menu
 
-
+ $(document).ready(function() {
  window.addEventListener('scroll', function () {
   if (window.pageYOffset >= 50) {
     $(".portfolio-nav").css("position", "sticky");
@@ -114,9 +114,11 @@ const closemenucontact = document.querySelector(".contact");
   } else {
     $(".portfolio-nav").css("position", "absolute");
     $(".portfolio-nav").css("box-shadow", "none");
+    $(".portfolio-nav").css("background", "none");
 
   }
-})
+});
+});
 
 
 
