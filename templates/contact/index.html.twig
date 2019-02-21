@@ -50,21 +50,32 @@
             </ul>
             </div>
         </div>
+             <div class="container-fluid mt-2 pt-5">
+            <div class="menu-large  d-flex justify-content-end align-items-end">
+                <a class="lien-menu-large active pr-5" href="{{path('home')}}">Accueil</a>
+                <span>|</span>    
+                <a class="lien-menu-large pr-5 pl-5" href="{{path('projets')}}">Projets</a>
+                <span>|</span>
+                <a class="lien-menu-large pr-5 pl-5" href="#apropos">À Propos</a>
+                <span>|</span>
+                <a class="lien-menu-large pl-5" href="{{path('contact')}}">Contact</a>
+            </div>
+        </div>
         <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
         <a href="#header"><i class="fas fa-chevron-up"></i></a> 
         <div class="container titre-page-contact d-flex flex-column justify-content-center align-items-center">
                 <h2  class="text-center" data-aos="fade-right" data-aos-duration="2000" >Contactez-moi</h2>
-                <a class="down" href="#projet"><i class="fas fa-chevron-down"></i></a> 
+                  {{ form_start(our_form) }}
+                {{ form_widget(our_form) }}
+
+                <button type="submit" class="btn btn-success">Envoyer</button>
+
+                {{ form_end(our_form) }}
+
+
         </div>
     </header>
     <div class="container">
-        {{ form_start(our_form) }}
-        {{ form_widget(our_form) }}
-
-        <button type="submit" class="btn btn-success">Envoyer</button>
-
-        {{ form_end(our_form) }}
-
-
+      
     </div>
     {% endblock %}

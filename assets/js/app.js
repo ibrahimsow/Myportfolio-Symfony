@@ -85,61 +85,40 @@ const closemenuprojets = document.querySelector(".projets");
 const closemenuapropos = document.querySelector(".apropos");
 const closemenucontact = document.querySelector(".contact");
 
-monhamberger.addEventListener("click", function(showmenu){
-       document.querySelector(".showmenu").style.top = "0vh";
-    //    document.querySelector(".menu").style.display = "block";
-       // document.querySelector(".hamburger").style.display = "none";
- })
- close.addEventListener("click", function(hidemenu){
-        document.querySelector(".showmenu").style.top = "-150vh";
- })
- closemenuaccueil.addEventListener("click", function(hidemenu){
-     document.querySelector(".showmenu").style.top = "-150vh";
- })
- closemenuprojets.addEventListener("click", function(hidemenu){
-    document.querySelector(".showmenu").style.top = "-150vh";
+// monhamberger.addEventListener("click", function(showmenu){
+//        document.querySelector(".showmenu").style.top = "0vh";
+//     //    document.querySelector(".menu").style.display = "block";
+//        // document.querySelector(".hamburger").style.display = "none";
+//  })
+//  close.addEventListener("click", function(hidemenu){
+//         document.querySelector(".showmenu").style.top = "-150vh";
+//  })
+//  closemenuaccueil.addEventListener("click", function(hidemenu){
+//      document.querySelector(".showmenu").style.top = "-150vh";
+//  })
+//  closemenuprojets.addEventListener("click", function(hidemenu){
+//     document.querySelector(".showmenu").style.top = "-150vh";
+// })
+//  closemenuapropos.addEventListener("click", function(hidemenu){
+//      document.querySelector(".showmenu").style.top = "-150vh";
+//  })
+
+ // sticky menu
+
+
+ window.addEventListener('scroll', function () {
+  if (window.pageYOffset >= 50) {
+    $(".portfolio-nav").css("position", "sticky");
+    $(".portfolio-nav").css("box-shadow", "0px 1px 11px 0px rgba(0,0,0,0.22)");
+    $(".portfolio-nav").css("background", "linear-gradient(#fff, #ffffffbf)");
+  } else {
+    $(".portfolio-nav").css("position", "absolute");
+    $(".portfolio-nav").css("box-shadow", "none");
+
+  }
 })
- closemenuapropos.addEventListener("click", function(hidemenu){
-     document.querySelector(".showmenu").style.top = "-150vh";
- })
 
 
-$('.img-parallax').each(function(){
-    var img = $(this);
-    var imgParent = $(this).parent();
-    function parallaxImg () {
-      var speed = img.data('speed');
-      var imgY = imgParent.offset().top;
-      var winY = $(this).scrollTop();
-      var winH = $(this).height();
-      var parentH = imgParent.innerHeight();
-  
-  
-      // The next pixel to show on screen      
-      var winBottom = winY + winH;
-  
-      // If block is shown on screen
-      if (winBottom > imgY && winY < imgY + parentH) {
-        // Number of pixels shown after block appear
-        var imgBottom = ((winBottom - imgY) * speed);
-        // Max number of pixels until block disappear
-        var imgTop = winH + parentH;
-        // Porcentage between start showing until disappearing
-        var imgPercent = ((imgBottom / imgTop) * 100) + (50 - (speed * 50));
-      }
-      img.css({
-        top: imgPercent + '%',
-        transform: 'translate(-50%, -' + imgPercent + '%)'
-      });
-    }
-    $(document).on({
-      scroll: function () {
-        parallaxImg();
-      }, ready: function () {
-        parallaxImg();
-      }
-    });
-  });
 
   // dashboard
 
